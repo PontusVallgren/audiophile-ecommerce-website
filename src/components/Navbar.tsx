@@ -40,7 +40,9 @@ const Navbar: React.FC = () => {
             {menu.map((item) => {
               return (
                 <Link key={item.name} href={item.path}>
-                  <a className='hover:text-primary'>{item.name}</a>
+                  <a className='font-bold tracking-widest hover:text-primary'>
+                    {item.name}
+                  </a>
                 </Link>
               );
             })}

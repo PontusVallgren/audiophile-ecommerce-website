@@ -21,10 +21,12 @@ const CategoryListItem: React.FC<CategoryListItemProps> = ({
         <Image alt='product' src={thumbnail} layout='fill' priority />
       </div>
       <Link href={path}>
-        <a className='uppercase text-lg my-3'>{category}</a>
+        <a className='uppercase text-lg my-3 font-bold tracking-wider'>
+          {category}
+        </a>
       </Link>
       <Link href={path}>
-        <a className='uppercase text-sm p-3 hover:text-primary'>
+        <a className='uppercase text-sm p-3 font-normal tracking-wide hover:text-primary'>
           Shop <Image src={iconArrow} alt='icon arrow' />
         </a>
       </Link>

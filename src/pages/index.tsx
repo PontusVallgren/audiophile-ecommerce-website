@@ -5,7 +5,9 @@ const Home: NextPage = () => {
   return (
     <div>
       <Navbar />
-      <h1 className='underline text-lg text-primary-hover'>Hello world</h1>
+      <h1 className='underline text-lg text-primary-hover font-manrope'>
+        Hello world
+      </h1>
     </div>
   );
 };
