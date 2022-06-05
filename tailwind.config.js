@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     colors: {
       white: "white",
-      black: "black",
+      black: "#191919",
       primary: "#D87D4A",
       "primary-hover": "#FBAF85",
       gray: "#979797",
@@ -12,7 +12,21 @@ module.exports = {
     fontFamily: {
       manrope: ["Manrope"],
     },
-    extend: {},
+
+    extend: {
+      backgroundImage: {
+        "hero-mobile": "url('../public/banner-mobile.jpg')",
+        "hero-tablet": "url('../public/banner-tablet.jpg')",
+        "hero-desktop": "url('../public/banner-desktop.jpg')",
+      },
+      letterSpacing: {
+        Char10: "10px",
+      },
+      fontSize: {
+        Body: "15px",
+        Title: "56px",
+      },
+    },
   },
   plugins: [],
 };
