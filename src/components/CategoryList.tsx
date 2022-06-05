@@ -23,7 +23,7 @@ const CategoryList: React.FC = () => {
     },
   ];
   return (
-    <div className='max-w-5xl mx-auto flex flex-col justify-evenly items-center md:flex-row'>
+    <div className='max-w-5xl mx-auto flex flex-col justify-evenly items-center my-28 md:flex-row'>
       {Categories.map((item, index) => {
         return (
           <CategoryListItem
