@@ -6,6 +6,7 @@ module.exports = {
       black: "#191919",
       primary: "#D87D4A",
       "primary-hover": "#FBAF85",
+      "secondary-hover": "#4C4C4C",
       gray: "#979797",
       lightGray: "#F1F1F1",
     },
@@ -25,6 +26,9 @@ module.exports = {
       fontSize: {
         Body: "15px",
         Title: "56px",
+      },
+      screens: {
+        "lg-1": "1140px",
       },
     },
   },
