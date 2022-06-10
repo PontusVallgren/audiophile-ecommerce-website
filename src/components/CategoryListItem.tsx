@@ -18,7 +18,7 @@ const CategoryListItem: React.FC<CategoryListItemProps> = ({
   return (
     <div className='w-80 h-56 relative flex items-center flex-col m-4'>
       <div className='w-32 h-28 relative'>
-        <Image alt='product' src={thumbnail} layout='fill' priority />
+        <Image alt='product' src={thumbnail} layout='fill' />
       </div>
       <Link href={path}>
         <a className='uppercase text-lg my-3 font-bold tracking-wider'>
