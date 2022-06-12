@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
   ];
   return (
     <>
-      <div className='bg-black min-w-full'>
+      <nav className='bg-black min-w-full'>
         <nav className='h-24 bg-black max-w-5xl flex items-center mx-auto border-b border-white border-opacity-40 relative lg:justify-between'>
           <button onClick={toggle} className='ml-8 flex  lg:hidden'>
             <Image src={hamburgerIcon} alt='icon' width={17} height={17} />
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
             </button>
           </span>
         </nav>
-      </div>
+      </nav>
       {open && <CategoryList />}
     </>
   );
