@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
           <div className='text-white hidden lg:flex lg:justify-between lg:w-2/5 lg:uppercase lg:tracking-widest lg:text-sm'>
             {menu.map((item) => {
               return (
-                <Link key={item.name} href={item.path}>
+                <Link key={item.name} href={`/category${item.path}`}>
                   <a className='font-bold tracking-widest hover:text-primary'>
                     {item.name}
                   </a>

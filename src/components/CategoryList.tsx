@@ -8,17 +8,17 @@ const CategoryList: React.FC = () => {
   const Categories = [
     {
       category: "headphones",
-      path: "/headphones",
+      path: "/category/headphones",
       thumbnail: tbHeadphones,
     },
     {
       category: "speakers",
-      path: "/speakers",
+      path: "/category/speakers",
       thumbnail: tbSpeakers,
     },
     {
       category: "earphones",
-      path: "/earphones",
+      path: "/category/earphones",
       thumbnail: tbEarphones,
     },
   ];

@@ -2,9 +2,9 @@ import { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
 const useSetImage = (
-  mobile: StaticImageData,
-  tablet: StaticImageData,
-  desktop: StaticImageData
+  mobile: StaticImageData | string,
+  tablet: StaticImageData | string,
+  desktop: StaticImageData | string
 ) => {
   const [promoImage, setPromoImage] = useState(mobile);
 
