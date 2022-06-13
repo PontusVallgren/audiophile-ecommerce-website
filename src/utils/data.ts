@@ -10,9 +10,10 @@ const data = {
           desktop: 'www.google.se',
       },
       categoryImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+        mobile: 'https://i.imgur.com/55wBoX4.jpg',
+        tablet: 'https://i.imgur.com/EU9r0c4.jpg',
+        desktop: 'https://i.imgur.com/a8IyGt5.jpg',
+          /* desktop: '../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg', */
       },
       promotionImages: {
           1: 'www.google.se',
@@ -62,9 +63,10 @@ const data = {
           desktop: 'www.google.se',
       },
       categoryImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+        mobile: 'https://i.imgur.com/q1FT59M.jpg',
+        tablet: 'https://i.imgur.com/yvQEJtF.jpg',
+        desktop: 'https://i.imgur.com/q7XaXW7.jpg', 
+          /* desktop: '../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg', */
       },
       promotionImages: {
         1: 'www.google.se',
@@ -110,9 +112,10 @@ const data = {
           desktop: 'www.google.se',
       },
       categoryImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/owqOh3T.jpg',
+          tablet: 'https://i.imgur.com/tnRMkG1.jpg',
+          desktop: 'https://i.imgur.com/of6fC5Q.jpg',
+          /* desktop: '../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg', */
       },
       promotionImages: {
         1: 'www.google.se',
@@ -158,9 +161,10 @@ const data = {
           desktop: 'www.google.se',
       },
       categoryImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/aY4dI8D.jpg',
+          tablet: 'https://i.imgur.com/inaOAaq.jpg',
+          desktop: 'https://i.imgur.com/Us7R3Rh.jpg',
+          /* desktop: '../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg', */
       },
       promotionImages: {
         1: 'www.google.se',
@@ -210,9 +214,10 @@ const data = {
           desktop: 'www.google.se',
       },
       categoryImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/2AAh37k.jpg',
+          tablet: 'https://i.imgur.com/SgA4Gyr.jpg',
+          desktop: 'https://i.imgur.com/XDyikUT.jpg',
+          /* desktop: '../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg', */
       },
       promotionImages: {
         1: 'www.google.se',
@@ -262,9 +267,10 @@ const data = {
           desktop: 'www.google.se',
       },
       categoryImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/X0Wwomo.jpg',
+          tablet: 'https://i.imgur.com/jXrXVNg.jpg',
+          desktop: 'https://i.imgur.com/XvUWb3m.jpg',
+          /* desktop: '../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg', */
       },
       promotionImages: {
         1: 'www.google.se',
