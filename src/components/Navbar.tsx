@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import hamburgerIcon from "../assets/shared/tablet/icon-hamburger.svg";
 import logo from "../assets/shared/desktop/logo.svg";
 import CategoryList from "./CategoryList";
+import { Store } from "../utils/Store";
 
 const Navbar: React.FC = () => {
+  const { state } = useContext(Store);
+  const { cart } = state;
   const [open, setOpen] = useState<boolean>(false);
+  const [cartCount, setCartCount] = useState<number>(0);
+
+  useEffect(() => {
+    setCartCount(cart.cartItems.length);
+  }, [cart.cartItems.length]);
+
   const toggle = () => {
     setOpen(!open);
   };
@@ -80,6 +89,9 @@ const Navbar: React.FC = () => {
                 />
               </svg>
             </button>
+            {cartCount > 0 && (
+              <span className='text-primary font-bold'>{cartCount}</span>
+            )}
           </span>
         </nav>
       </nav>
