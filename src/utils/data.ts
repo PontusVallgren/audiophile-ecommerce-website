@@ -5,9 +5,9 @@ const data = {
       slug: 'xx99-mark-2',
       category: 'headphones',
       productImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/a9jMeui.jpg',
+          tablet: 'https://i.imgur.com/ehoqahR.jpg',
+          desktop: 'https://i.imgur.com/8CAbGes.jpg',
       },
       categoryImages: {
         mobile: 'https://i.imgur.com/55wBoX4.jpg',
@@ -58,9 +58,9 @@ const data = {
       slug: 'xx99-mark-1',
       category: 'headphones',
       productImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/ZYng0J8.jpg',
+          tablet: 'https://i.imgur.com/qCy6kSJ.jpg',
+          desktop: 'https://i.imgur.com/X4v4NGY.jpg',
       },
       categoryImages: {
         mobile: 'https://i.imgur.com/q1FT59M.jpg',
@@ -107,9 +107,9 @@ const data = {
       slug: 'xx59',
       category: 'headphones',
       productImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/wXaXGPN.jpg',
+          tablet: 'https://i.imgur.com/XtpFUKD.jpg',
+          desktop: 'https://i.imgur.com/01iRO6j.jpg',
       },
       categoryImages: {
           mobile: 'https://i.imgur.com/owqOh3T.jpg',
@@ -156,9 +156,9 @@ const data = {
       slug: 'zx9',
       category: 'speakers',
       productImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/wxcHZLd.jpg',
+          tablet: 'https://i.imgur.com/zTqB5ph.jpg',
+          desktop: 'https://i.imgur.com/e5JRQ3S.jpg',
       },
       categoryImages: {
           mobile: 'https://i.imgur.com/aY4dI8D.jpg',
@@ -209,9 +209,9 @@ const data = {
       slug: 'zx7',
       category: 'speakers',
       productImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/VSmhi0m.jpg',
+          tablet: 'https://i.imgur.com/sI0lChK.jpg',
+          desktop: 'https://i.imgur.com/wI7S0Sw.jpg',
       },
       categoryImages: {
           mobile: 'https://i.imgur.com/2AAh37k.jpg',
@@ -262,9 +262,9 @@ const data = {
       slug: 'yx1-wireless',
       category: 'earphones',
       productImages: {
-          mobile: 'www.google.se',
-          tablet: 'www.google.se',
-          desktop: 'www.google.se',
+          mobile: 'https://i.imgur.com/EaSVY1H.jpg',
+          tablet: 'https://i.imgur.com/2Vdnp8L.jpg',
+          desktop: 'https://i.imgur.com/QNpM52r.jpg',
       },
       categoryImages: {
           mobile: 'https://i.imgur.com/X0Wwomo.jpg',

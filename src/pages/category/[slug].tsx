@@ -8,13 +8,15 @@ import CategoryList from "../../components/CategoryList";
 import About from "../../components/About";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  db.connect();
-  const slug = context.params!.slug;
-  const res = await Product.find({ category: slug });
-  const data = JSON.parse(JSON.stringify(res));
+  await db.connect();
+  const category = context.params!.slug;
+  const res = await Product.find({ category: category });
+  const data = JSON.parse(JSON.stringify(res)).sort(
+    (a: product, b: product) => Number(b.isFeatured) - Number(a.isFeatured)
+  );
   return {
     props: {
-      category: slug,
+      category,
       products: data,
     },
   };
