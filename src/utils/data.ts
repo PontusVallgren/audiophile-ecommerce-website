@@ -30,7 +30,17 @@ const data = {
           name: "test",
           rating: 5,
           comment: "test comment"
-      }],
+      },
+      {
+        name: "test2",
+        rating: 4,
+        comment: "test2 comment"
+    },
+    {
+        name: "test3",
+        rating: 2,
+        comment: "test3 comment"
+    }],
     isFeatured: true,
     inBox: [{
         product: "Headphone Unit",

@@ -9,7 +9,7 @@
   @apply bg-black text-white text-xs font-bold tracking-widest uppercase cursor-pointer py-4 px-8 max-w-[160px] hover:bg-secondary-hover;
 }
 .btn-transparent {
-  @apply text-black text-xs font-bold tracking-widest uppercase cursor-pointer py-4 px-6 text-center max-w-[160px] border hover:bg-black hover:text-white;
+  @apply text-black text-xs font-bold tracking-widest uppercase cursor-pointer py-4 px-4 text-center max-w-[160px] border hover:bg-black hover:text-white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
