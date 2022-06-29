@@ -9,6 +9,9 @@ type ReviewListProps = {
 const ReviewListItem: React.FC<ReviewListProps> = ({ review }) => {
   const [readMore, setReadMore] = useState<boolean>(false);
   const stars = Array(5).fill(0);
+  const reviewLength = review.comment.split(" ").length > 30;
+  const readMoreText = readMore ? "...show less" : "...read more";
+
   return (
     <div className='my-6 border-b-2 border-b-lightGray md:my-0 md:mb-6'>
       <h1 className='font-bold uppercase tracking-wide'>{review.name}</h1>
@@ -33,7 +36,7 @@ const ReviewListItem: React.FC<ReviewListProps> = ({ review }) => {
           onClick={() => setReadMore(!readMore)}
           className='text-blue opacity-75 hover:opacity-100'
         >
-          {readMore ? "...show less" : "...read more"}
+          {reviewLength && readMoreText}
         </button>
       </p>
     </div>
