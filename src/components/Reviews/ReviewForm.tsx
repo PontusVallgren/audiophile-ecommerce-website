@@ -1,11 +1,12 @@
-import React, { SyntheticEvent, useState } from "react";
+import React, { SyntheticEvent, useState, FormEvent } from "react";
 import { FaStar } from "react-icons/fa";
 
 type ReviewFormProps = {
   handleModal: () => void;
+  productId: string;
 };
 
-const ReviewForm: React.FC<ReviewFormProps> = ({ handleModal }) => {
+const ReviewForm: React.FC<ReviewFormProps> = ({ handleModal, productId }) => {
   const [input, setInput] = useState({
     username: "",
     comment: "",
@@ -15,6 +16,22 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ handleModal }) => {
   const handleChange = (e: SyntheticEvent) => {
     const { value, name } = e.target as HTMLInputElement;
     setInput({ ...input, [name]: value });
+  };
+  const onSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    await fetch(`/api/products/${productId}/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: input.username,
+        rating: rating,
+        comment: input.comment,
+      }),
+    });
+    setInput({ username: "", comment: "" });
+    handleModal();
   };
   return (
     <div className='bg-black bg-opacity-50 fixed z-10 inset-0'>
@@ -68,7 +85,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ handleModal }) => {
           <button onClick={handleModal} className='btn-secondary'>
             Cancel
           </button>
-          <button onClick={() => console.log(rating)} className='btn-primary'>
+          <button onClick={onSubmit} className='btn-primary'>
             Post
           </button>
         </div>

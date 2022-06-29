@@ -39,7 +39,7 @@ const Reviews: React.FC<ReviewsProps> = ({ id }) => {
         <button onClick={handleModal} className='btn-transparent px-3'>
           write a review
         </button>
-        {openForm && <ReviewForm handleModal={handleModal} />}
+        {openForm && <ReviewForm handleModal={handleModal} productId={id} />}
       </div>
       <div className='md:w-1/2'>
         <ReviewList reviews={reviewsData.reviews} />
