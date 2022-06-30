@@ -7,9 +7,17 @@ import React, {
 import Cookies from "js-cookie";
 import { product } from "../types";
 
+type CartProduct = {
+  img: string;
+  name: string;
+  price: number;
+  quantity: number;
+  _id: string;
+};
+
 type InitialStateType = {
   cart: {
-    cartItems: product[];
+    cartItems: CartProduct[];
   };
 };
 
@@ -41,6 +49,11 @@ const reducer = (state: any, action: any) => {
             item._id === existItem._id ? newItem : item
           )
         : [...state.cart.cartItems, newItem];
+      Cookies.set("cartItems", JSON.stringify(cartItems));
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    case "CART_REMOVE_ALL": {
+      const cartItems: CartProduct[] = [];
       Cookies.set("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     }

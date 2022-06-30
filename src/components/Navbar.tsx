@@ -5,20 +5,22 @@ import hamburgerIcon from "../assets/shared/tablet/icon-hamburger.svg";
 import logo from "../assets/shared/desktop/logo.svg";
 import CategoryList from "./CategoryList";
 import { Store } from "../utils/Store";
+import Cart from "./Cart";
 
 const Navbar: React.FC = () => {
   const { state } = useContext(Store);
   const { cart } = state;
-  const [open, setOpen] = useState<boolean>(false);
-  const [cartCount, setCartCount] = useState<number>(0);
+  const [hamburger, setHamburger] = useState<boolean>(false);
+  const [cartShow, setCartShow] = useState(false);
 
-  useEffect(() => {
-    setCartCount(cart.cartItems.length);
-  }, [cart.cartItems.length]);
-
-  const toggle = () => {
-    setOpen(!open);
+  const toggleHamburger = () => {
+    setHamburger(!hamburger);
   };
+
+  const toggleCart = () => {
+    setCartShow(!cartShow);
+  };
+
   const menu = [
     {
       name: "headphones",
@@ -37,7 +39,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className='bg-black min-w-full'>
         <nav className='h-24 bg-black max-w-5xl flex items-center mx-auto border-b border-white border-opacity-40 relative lg:justify-between'>
-          <button onClick={toggle} className='ml-8 flex  lg:hidden'>
+          <button onClick={toggleHamburger} className='ml-8 flex  lg:hidden'>
             <Image src={hamburgerIcon} alt='icon' width={17} height={17} />
           </button>
           <Link href='/'>
@@ -74,7 +76,7 @@ const Navbar: React.FC = () => {
             </button>
             <button
               aria-label='Shopping Cart'
-              onClick={() => console.log("click")}
+              onClick={toggleCart}
               className='p-2'
             >
               <svg
@@ -89,13 +91,16 @@ const Navbar: React.FC = () => {
                 />
               </svg>
             </button>
-            {cartCount > 0 && (
-              <span className='text-primary font-bold'>{cartCount}</span>
+            {cart.cartItems.length > 0 && (
+              <span className='text-primary font-bold'>
+                {cart.cartItems.length}
+              </span>
             )}
           </span>
         </nav>
       </nav>
-      {open && <CategoryList />}
+      {cartShow && <Cart cartItems={cart.cartItems} />}
+      {hamburger && <CategoryList />}
     </>
   );
 };
