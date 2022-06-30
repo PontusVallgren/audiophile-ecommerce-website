@@ -21,6 +21,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       description: 1,
       features: 1,
       inBox: 1,
+      reviews: 1,
     }
   );
   const products = JSON.parse(JSON.stringify(res));
@@ -40,7 +41,7 @@ const Product: NextPage<ProductProps> = ({ products }) => {
   return (
     <div>
       <ProductSpec data={products} />
-      <Reviews id={products._id} />
+      <Reviews id={products._id} reviews={products.reviews} />
       <CategoryList />
       <About />
     </div>
