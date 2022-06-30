@@ -39,3 +39,9 @@ export type product = {
       }
     ];
   };
+
+  export type Review = {
+    name: string;
+    comment: string;
+    rating: number;
+  };

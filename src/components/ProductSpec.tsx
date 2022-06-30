@@ -4,8 +4,6 @@ import useSetImage from "./useSetImage";
 import { product } from "../types";
 import { Store } from "../utils/Store";
 import ProductCounter from "./ProductCounter";
-import CategoryList from "./CategoryList";
-import About from "./About";
 
 type ProductSpecProps = {
   data: product;
@@ -86,7 +84,7 @@ const ProductSpec: React.FC<ProductSpecProps> = ({ data }) => {
           <p className='opacity-50 font-light leading-6'>{data.features}</p>
         </div>
         <div className='my-8 md:flex md:justify-between lg:flex-col'>
-          <h1 className='w-[350px] uppercase text-2xl font-bold leading-6 mb-8 md:text-4xl'>
+          <h1 className='max-w-[350px] uppercase text-2xl font-bold leading-6 mb-8 md:text-4xl'>
             in the box
           </h1>
           <div>
@@ -105,8 +103,6 @@ const ProductSpec: React.FC<ProductSpecProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <CategoryList />
-      <About />
     </>
   );
 };

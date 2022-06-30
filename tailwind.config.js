@@ -9,6 +9,7 @@ module.exports = {
       "secondary-hover": "#4C4C4C",
       gray: "#979797",
       lightGray: "#F1F1F1",
+      blue: "#4708F9",
     },
     fontFamily: {
       manrope: ["Manrope"],
