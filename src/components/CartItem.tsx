@@ -11,10 +11,11 @@ type CartProduct = {
 
 type CartItemProps = {
   product: CartProduct;
+  onClick: (id: string, itemQuantity: number) => void;
 };
 
-const CartItem: React.FC<CartItemProps> = ({ product }) => {
-  const onClick = () => {};
+const CartItem: React.FC<CartItemProps> = ({ product, onClick }) => {
+  /*   const onClick = () => {}; */
   return (
     <li className='flex gap-4 mb-5'>
       <Image
@@ -28,7 +29,21 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
         <p>{product.name}</p>
         <span>{product.price}</span>
       </div>
-      <span className='flex grow justify-end'>{product.quantity}</span>
+      <div className='bg-lightGray h-10 flex items-center self-center ml-auto'>
+        <button
+          onClick={() => onClick(product._id, product.quantity - 1)}
+          className='py-2 px-4 font-bold opacity-25 cursor-pointer hover:text-primary hover:opacity-100'
+        >
+          -
+        </button>
+        <span className='font-bold'>{product.quantity}</span>
+        <button
+          onClick={() => onClick(product._id, product.quantity + 1)}
+          className='py-2 px-4 font-bold opacity-25 cursor-pointer hover:text-primary hover:opacity-100'
+        >
+          +
+        </button>
+      </div>
     </li>
   );
 };
