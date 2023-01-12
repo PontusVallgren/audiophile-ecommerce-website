@@ -43,6 +43,10 @@ const ProductSpec: React.FC<ProductSpecProps> = ({ data }) => {
       type: "CART_ADD_ITEM",
       payload: { ...productData, quantity: itemQuantity },
     });
+
+    dispatch({
+      type: "CART_TOTAL_SUM",
+    });
   };
   return (
     <>

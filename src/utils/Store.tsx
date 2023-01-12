@@ -7,9 +7,19 @@ import React, {
 import Cookies from "js-cookie";
 import { product } from "../types";
 
+type CartProduct = {
+  img: string;
+  name: string;
+  price: number;
+  quantity: number;
+  _id: string;
+};
+
 type InitialStateType = {
   cart: {
-    cartItems: product[];
+    cartItems: CartProduct[];
+    cartTotalAmount: number;
+    cartTotalQuantity: number;
   };
 };
 
@@ -18,6 +28,8 @@ const initialState = {
     cartItems: Cookies.get("cartItems")
       ? JSON.parse(Cookies.get("cartItems") as string)
       : [],
+    cartTotalAmount: 0,
+    cartTotalQuantity: 0,
   },
 };
 
@@ -43,6 +55,30 @@ const reducer = (state: any, action: any) => {
         : [...state.cart.cartItems, newItem];
       Cookies.set("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    case "CART_REMOVE_ALL": {
+      const cartItems: CartProduct[] = [];
+      Cookies.set("cartItems", JSON.stringify(cartItems));
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    case "CART_TOTAL_SUM": {
+      let { total, quantity } = state.cart.cartItems.reduce(
+        (cartTotal: any, cartItem: CartProduct) => {
+          const { price, quantity } = cartItem;
+          const itemTotal = price * quantity;
+
+          cartTotal.total += itemTotal;
+          cartTotal.quantity += quantity;
+
+          return cartTotal;
+        },
+        {
+          total: 0,
+          quantity: 0,
+        }
+      );
+      state.cart.cartTotalAmount = total;
+      state.cart.cartTotalQuantity = quantity;
     }
     default:
       return state;
