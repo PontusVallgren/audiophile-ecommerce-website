@@ -17,11 +17,20 @@ type CartProps = {
 const Cart: React.FC<CartProps> = ({ cartItems }) => {
   const { dispatch, state } = useContext(Store);
   const { cart } = state;
-  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    dispatch({
+      type: "CART_TOTAL_SUM",
+    });
+  }, [dispatch, state]);
 
   const handleRemove = () => {
     dispatch({
       type: "CART_REMOVE_ALL",
+    });
+
+    dispatch({
+      type: "CART_TOTAL_SUM",
     });
   };
 
@@ -41,6 +50,10 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
     dispatch({
       type: "CART_ADD_ITEM",
       payload: { ...productData, quantity: itemQuantity },
+    });
+
+    dispatch({
+      type: "CART_TOTAL_SUM",
     });
   };
 
@@ -67,7 +80,7 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
         </ul>
         <div className='flex justify-between'>
           <p>TOTAL</p>
-          <span>{totalPrice}</span>
+          <span>{state.cart.cartTotalAmount}</span>
         </div>
         <button className='btn-primary'>CHECKOUT</button>
       </div>

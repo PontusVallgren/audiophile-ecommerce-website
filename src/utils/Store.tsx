@@ -18,6 +18,8 @@ type CartProduct = {
 type InitialStateType = {
   cart: {
     cartItems: CartProduct[];
+    cartTotalAmount: number;
+    cartTotalQuantity: number;
   };
 };
 
@@ -26,6 +28,8 @@ const initialState = {
     cartItems: Cookies.get("cartItems")
       ? JSON.parse(Cookies.get("cartItems") as string)
       : [],
+    cartTotalAmount: 0,
+    cartTotalQuantity: 0,
   },
 };
 
@@ -56,6 +60,25 @@ const reducer = (state: any, action: any) => {
       const cartItems: CartProduct[] = [];
       Cookies.set("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    case "CART_TOTAL_SUM": {
+      let { total, quantity } = state.cart.cartItems.reduce(
+        (cartTotal: any, cartItem: CartProduct) => {
+          const { price, quantity } = cartItem;
+          const itemTotal = price * quantity;
+
+          cartTotal.total += itemTotal;
+          cartTotal.quantity += quantity;
+
+          return cartTotal;
+        },
+        {
+          total: 0,
+          quantity: 0,
+        }
+      );
+      state.cart.cartTotalAmount = total;
+      state.cart.cartTotalQuantity = quantity;
     }
     default:
       return state;
