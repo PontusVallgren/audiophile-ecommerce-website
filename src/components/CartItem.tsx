@@ -26,8 +26,8 @@ const CartItem: React.FC<CartItemProps> = ({ product, onClick }) => {
         alt='product thumbnail'
       />
       <div className='flex-col justify-center'>
-        <p>{product.name}</p>
-        <span>{product.price}</span>
+        <p className='font-bold tracking-wide'>{product.name}</p>
+        <span className='text-sm opacity-50'>$ {product.price}</span>
       </div>
       <div className='bg-lightGray h-10 flex items-center self-center ml-auto'>
         <button
