@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../utils/Store";
 import CartItem from "./CartItem";
@@ -89,9 +90,11 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
             $ {state.cart.cartTotalAmount}
           </span>
         </div>
-        <button className='btn-primary flex w-full justify-center'>
-          CHECKOUT
-        </button>
+        <Link href={`/checkout`}>
+          <button className='btn-primary flex w-full justify-center'>
+            CHECKOUT
+          </button>
+        </Link>
       </div>
     </div>
   );
