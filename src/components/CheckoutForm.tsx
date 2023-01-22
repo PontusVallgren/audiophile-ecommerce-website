@@ -28,7 +28,7 @@ const CheckoutForm: React.FC = () => {
   };
 
   return (
-    <div className='max-w-[350px] mx-auto bg-white md:max-w-[685px] lg:max-w-[1110px]'>
+    <div className='max-w-[350px] mx-auto bg-white md:max-w-[685px] lg:max-w-[1110px] rounded-md'>
       <h1 className='text-3xl font-bold tracking-wider uppercase p-6'>
         Checkout
       </h1>

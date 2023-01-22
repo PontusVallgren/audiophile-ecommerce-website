@@ -58,7 +58,6 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
     });
   };
 
-  console.log(cartItems);
   return (
     <div className='bg-black bg-opacity-50 fixed z-10 inset-0 top-[13vh]'>
       <div className='max-w-[365px] mx-auto p-6 rounded-md bg-white shadow-2xl absolute top-[5vh] left-[5vw] right-[5vw]'>
