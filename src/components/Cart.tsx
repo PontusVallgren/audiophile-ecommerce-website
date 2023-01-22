@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../utils/Store";
 import CartItem from "./CartItem";
@@ -57,7 +58,6 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
     });
   };
 
-  console.log(cartItems);
   return (
     <div className='bg-black bg-opacity-50 fixed z-10 inset-0 top-[13vh]'>
       <div className='max-w-[365px] mx-auto p-6 rounded-md bg-white shadow-2xl absolute top-[5vh] left-[5vw] right-[5vw]'>
@@ -89,9 +89,11 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
             $ {state.cart.cartTotalAmount}
           </span>
         </div>
-        <button className='btn-primary flex w-full justify-center'>
-          CHECKOUT
-        </button>
+        <Link href={`/checkout`}>
+          <button className='btn-primary flex w-full justify-center'>
+            CHECKOUT
+          </button>
+        </Link>
       </div>
     </div>
   );

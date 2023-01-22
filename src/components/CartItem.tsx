@@ -15,7 +15,6 @@ type CartItemProps = {
 };
 
 const CartItem: React.FC<CartItemProps> = ({ product, onClick }) => {
-  /*   const onClick = () => {}; */
   return (
     <li className='flex gap-4 mb-5'>
       <Image
