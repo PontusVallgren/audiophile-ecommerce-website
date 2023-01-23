@@ -99,8 +99,8 @@ const Navbar: React.FC = () => {
           </span>
         </nav>
       </nav>
-      {cartShow && <Cart cartItems={cart.cartItems} />}
-      {hamburger && <CategoryList />}
+      {cartShow && <Cart toggle={toggleCart} cartItems={cart.cartItems} />}
+      {hamburger && <CategoryList toggle={toggleHamburger} />}
     </>
   );
 };

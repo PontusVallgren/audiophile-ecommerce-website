@@ -4,7 +4,11 @@ import tbHeadphones from "../../public/thumbnail-headphones.png";
 import tbSpeakers from "../../public/thumbnail-speakers.png";
 import CategoryListItem from "./CategoryListItem";
 
-const CategoryList: React.FC = () => {
+type CategoryListProps = {
+  toggle: () => void;
+};
+
+const CategoryList: React.FC<CategoryListProps> = ({ toggle }) => {
   const Categories = [
     {
       category: "headphones",
@@ -31,6 +35,7 @@ const CategoryList: React.FC = () => {
             category={item.category}
             path={item.path}
             thumbnail={item.thumbnail}
+            toggle={toggle}
           />
         );
       })}
