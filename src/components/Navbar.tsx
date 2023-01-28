@@ -10,8 +10,13 @@ import Cart from "./Cart";
 const Navbar: React.FC = () => {
   const { state } = useContext(Store);
   const { cart } = state;
+  const [onFrontend, setOnFrontend] = useState(false);
   const [hamburger, setHamburger] = useState<boolean>(false);
   const [cartShow, setCartShow] = useState(false);
+
+  useEffect(() => {
+    setOnFrontend(true);
+  }, []);
 
   const toggleHamburger = () => {
     setHamburger(!hamburger);
@@ -91,7 +96,7 @@ const Navbar: React.FC = () => {
                 />
               </svg>
             </button>
-            {cart.cartItems.length > 0 && (
+            {onFrontend && cart.cartItems.length > 0 && (
               <span className='text-primary font-bold'>
                 {cart.cartItems.length}
               </span>
