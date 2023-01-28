@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Banner />
-      <CategoryList />
+      <CategoryList toggle={() => console.log} />
       <ProductPromoGrid />
       <About />
     </>

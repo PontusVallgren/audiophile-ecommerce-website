@@ -42,7 +42,7 @@ const Product: NextPage<ProductProps> = ({ products }) => {
     <div>
       <ProductSpec data={products} />
       <Reviews id={products._id} reviews={products.reviews} />
-      <CategoryList />
+      <CategoryList toggle={() => console.log} />
       <About />
     </div>
   );
