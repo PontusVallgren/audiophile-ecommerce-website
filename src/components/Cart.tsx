@@ -13,9 +13,10 @@ type CartProduct = {
 
 type CartProps = {
   cartItems: CartProduct[];
+  toggle: () => void;
 };
 
-const Cart: React.FC<CartProps> = ({ cartItems }) => {
+const Cart: React.FC<CartProps> = ({ cartItems, toggle }) => {
   const { dispatch, state } = useContext(Store);
   const { cart } = state;
 
@@ -60,7 +61,7 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
 
   return (
     <div className='bg-black bg-opacity-50 fixed z-10 inset-0 top-[13vh]'>
-      <div className='max-w-[365px] mx-auto p-6 rounded-md bg-white shadow-2xl absolute top-[5vh] left-[5vw] right-[5vw]'>
+      <div className='max-w-[365px] z-10 mx-auto p-6 rounded-md bg-white shadow-2xl absolute top-[5vh] left-[5vw] right-[5vw]'>
         <div className='flex justify-between mb-8'>
           <h1 className='text-xl font-bold uppercase tracking-widest'>
             Cart ({cartItems.length})
@@ -90,7 +91,10 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
           </span>
         </div>
         <Link href={`/checkout`}>
-          <button className='btn-primary flex w-full justify-center'>
+          <button
+            onClick={toggle}
+            className='btn-primary flex w-full justify-center'
+          >
             CHECKOUT
           </button>
         </Link>

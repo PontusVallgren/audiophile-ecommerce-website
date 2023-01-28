@@ -8,12 +8,14 @@ type CategoryListItemProps = {
   category: string;
   path: string;
   thumbnail: StaticImageData;
+  toggle: () => void;
 };
 
 const CategoryListItem: React.FC<CategoryListItemProps> = ({
   category,
   path,
   thumbnail,
+  toggle,
 }) => {
   return (
     <div className='w-80 h-56 relative flex items-center flex-col m-4'>
@@ -26,7 +28,10 @@ const CategoryListItem: React.FC<CategoryListItemProps> = ({
         </a>
       </Link>
       <Link href={path}>
-        <a className='uppercase text-sm p-3 font-normal tracking-wide hover:text-primary'>
+        <a
+          onClick={toggle}
+          className='uppercase text-sm p-3 font-normal tracking-wide hover:text-primary'
+        >
           Shop <Image src={iconArrow} alt='icon arrow' />
         </a>
       </Link>
