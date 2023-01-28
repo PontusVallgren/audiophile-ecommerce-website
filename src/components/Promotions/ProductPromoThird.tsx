@@ -18,7 +18,11 @@ type ProductPromoThirdProps = {
 };
 
 const ProductPromoThird: React.FC<ProductPromoThirdProps> = ({ data }) => {
-  const promoImage = useSetImage(data.mobile, data.tablet, data.desktop);
+  const promoImage = useSetImage(
+    data.mobile.src,
+    data.tablet.src,
+    data.desktop.src
+  );
   return (
     <div className='max-w-[360px] h-[425px] mx-auto flex flex-col md:flex-row md:max-w-2xl md:h-[320px] lg:max-w-[1110px]'>
       <figure className='w-full h-1/2 relative rounded-lg overflow-hidden mb-2 md:h-full md:mr-2'>

@@ -17,12 +17,17 @@ type ProductPromoPrimaryProps = {
 };
 
 const ProductPromoPrimary: React.FC<ProductPromoPrimaryProps> = ({ data }) => {
-  const promoImage = useSetImage(data.mobile, data.tablet, data.desktop);
+  const promoImage = useSetImage(
+    data.mobile.src,
+    data.tablet.src,
+    data.desktop.src
+  );
+  console.log(promoImage);
   return (
     <div
       className='max-w-[360px] mx-auto h-[660px] md:max-w-2xl md:h-[720px] lg:max-w-[1110px] lg:h-[560px] lg:flex lg:justify-end rounded-lg bg-cover bg-no-repeat'
       style={{
-        backgroundImage: `url(${promoImage.src})`,
+        backgroundImage: `url(${promoImage})`,
       }}
     >
       <div className='h-full flex flex-col justify-end text-center text-white px-10 pb-20 lg:w-2/5 lg:items-start lg:text-left'>

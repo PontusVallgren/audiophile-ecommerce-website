@@ -19,12 +19,16 @@ type ProductPromoSecondaryProps = {
 const ProductPromoSecondary: React.FC<ProductPromoSecondaryProps> = ({
   data,
 }) => {
-  const promoImage = useSetImage(data.mobile, data.tablet, data.desktop);
+  const promoImage = useSetImage(
+    data.mobile.src,
+    data.tablet.src,
+    data.desktop.src
+  );
   return (
     <div
       className='rounded-lg bg-cover bg-no-repeat max-w-[360px] mx-auto my-6 h-[320px] md:max-w-2xl lg:max-w-[1110px]'
       style={{
-        backgroundImage: `url(${promoImage.src})`,
+        backgroundImage: `url(${promoImage})`,
       }}
     >
       <div className='max-w-[360px] flex flex-col h-full justify-center ml-6 md:ml-16'>
