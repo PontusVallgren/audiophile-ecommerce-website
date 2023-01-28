@@ -40,7 +40,7 @@ const Category: NextPage<CategoryProps> = ({ products, category }) => {
           return <CategoryProduct key={index} index={index} product={item} />;
         })}
       </div>
-      <CategoryList />
+      <CategoryList toggle={() => console.log()} />
       <About />
     </>
   );
